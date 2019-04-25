@@ -1,11 +1,10 @@
-# Laptop
-macOS setup script for development
+My Mac Setup
+---
+macOS setup by ansible script. 🦊
 
 ## Usage
-- `git clone https://github.com/narze/laptop.git ~/laptop`
-  - If you don't have git (really?), download & execute bootstrap script
-  - `curl -L -o /tmp/bootstrap https://raw.githubusercontent.com/narze/laptop/master/bootstrap && sh /tmp/bootstrap`
-- Run setup script `cd ~/laptop && sh ./setup.sh`
+- Clone this `git clone https://github.com/nijicha/my-mac-setup.git`
+- Run setup script `cd ~/my-mac-setup && sh ./install.sh`
 
 ## TODO
 - [x] More brew & cask packages
