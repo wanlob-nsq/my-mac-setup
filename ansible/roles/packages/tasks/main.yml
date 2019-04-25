@@ -1,17 +1,12 @@
-- name: Install Java
-  homebrew_cask: name=java state=present
-  tags:
-    - java
-
-- name: Install Java 1.8
-  homebrew_cask: name=homebrew/cask-versions/java8 state=present
-  tags:
-    - java
-
-- import_tasks: zsh.yml
-- import_tasks: app_store.yml
-- import_tasks: homebrew/tap.yml
 - import_tasks: homebrew/brew.yml
 - import_tasks: homebrew/cask.yml
+- import_tasks: homebrew/tap.yml
+
+- import_tasks: development/heroku.yml
+#- import_tasks: development/rails.yml
+
+#- import_tasks: shell/zsh.yml
+
+- import_tasks: apps/app_store.yml
   tags:
     - mas

@@ -1,0 +1,11 @@
+- name: Add Homebrew Taps
+  homebrew_tap:
+    tap: heroku/brew
+    state: present
+
+- name: Install Heroku
+  homebrew:
+    name: heroku
+    state: present
+  tags:
+    - heroku
