@@ -2,3 +2,7 @@
 secrets.yml
 .DS_Store
 /zsh/config/local.zsh
+
+# Jetbrains File except Jetbrains dictionary
+.idea/
+!.idea/dictionaries/nathakorn_nsq.xml

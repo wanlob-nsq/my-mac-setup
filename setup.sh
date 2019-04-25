@@ -29,10 +29,16 @@ setup_ansible() {
   fi
 }
 
+setup_vim(){
+  if [[ ! -f ~/.vimrc ]]; then
+    cp misc/vimrc ~/.vimrc
+  fi
+}
+
 edit_secrets() {
-  if [ ! -f ansible/secrets.yml ]; then
+  if [[ ! -f ansible/secrets.yml ]]; then
     cp ansible/secrets.yml.example ansible/secrets.yml
-    vi ansible/secrets.yml
+    vim ansible/secrets.yml
   fi
 }
 
@@ -55,6 +61,7 @@ setup() {
   setup_xcode
   setup_homebrew
   setup_ansible
+  setup_vim
   edit_secrets
   encrypt_secrets
   run_ansible_playbook
