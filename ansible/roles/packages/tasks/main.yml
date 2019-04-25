@@ -8,11 +8,10 @@
   tags:
     - java
 
-- import_tasks: homebrew.yml
-- import_tasks: cask.yml
-- import_tasks: mas.yml
+- import_tasks: zsh.yml
+- import_tasks: app_store.yml
+- import_tasks: homebrew/tap.yml
+- import_tasks: homebrew/brew.yml
+- import_tasks: homebrew/cask.yml
   tags:
     - mas
-- import_tasks: zsh.yml
-- import_tasks: mpd.yml
-- import_tasks: asdf.yml

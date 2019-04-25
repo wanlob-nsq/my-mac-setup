@@ -1,0 +1,33 @@
+- name: Add Homebrew Taps
+  homebrew_tap:
+    tap: heroku/brew
+    state: present
+
+- name: Install Homebrew packages
+  homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  tags:
+    - homebrew
+  with_items:
+    - ack
+    - asciinema
+    - asciiquarium
+    - cowsay
+    - curl
+    - figlet
+    = fortune
+    - git
+    - heroku
+    - nginx
+    - nvm
+    - postgresql
+    - rbenv
+    - redis
+    - ruby-build
+    - sl
+    - sqlite
+    - tree
+    - wget
+    - zsh

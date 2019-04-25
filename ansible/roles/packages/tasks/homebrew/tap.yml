@@ -1,0 +1,6 @@
+- name: Add tap
+  homebrew_tap:
+    name: buo/cask-upgrade
+    state: present
+  tags:
+    - cask

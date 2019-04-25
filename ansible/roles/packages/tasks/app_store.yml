@@ -1,0 +1,17 @@
+---
+- name: Ensure MAS is installed.
+  homebrew: name=mas state=present
+
+- name: Install mas apps
+  command: mas install "{{ item.id }}"
+  with_items:
+    - { id: 1176895641, name: "Spark" }
+    - { id: 1063631769, name: "Medis" }
+    - { id: 499695659, name: "Skip Tunes" }
+    - { id: 409203825, name: "Numbers" }
+    - { id: 409201541, name: "Pages" }
+    - { id: 409183694, name: "Keynote" }
+    - { id: 803453959, name: "Slack" }
+    - { id: 441258766, name: "Magnet" }
+    - { id: 1101735327, name: 'Leech' }
+    - { id: 539883307, name: 'LINE' }
