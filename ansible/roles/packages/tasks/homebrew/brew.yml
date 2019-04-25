@@ -1,4 +1,6 @@
 - name: Install Homebrew packages
+  tags:
+    - homebrew
   homebrew:
     name:
       - ack
@@ -7,9 +9,8 @@
       - cowsay
       - curl
       - figlet
-      = fortune
+      - fortune
       - git
-      - heroku
       - mas
       - nginx
       - nvm
@@ -23,7 +24,3 @@
       - wget
       - zsh
     state: present
-  tags:
-    - homebrew
-  with_items:
-
