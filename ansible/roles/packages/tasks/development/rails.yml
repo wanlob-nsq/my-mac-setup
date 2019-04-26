@@ -3,3 +3,18 @@
 
 - name: Ensure ruby-build installed.
   homebrew: name=ruby-build state=present
+
+- name: Append rbenv to zshrc
+  command: echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+
+- name: Install ruby 2.4.1
+  command: rbenv install 2.4.1
+
+- name: Global ruby 2.4.1
+  command: rbenv global 2.4.1
+
+- name: Install Rails 5.1.4
+  command: gem install rails -v 5.1.4 --no-ri --no-doc
+
+- name: rbenv Rehash
+  command: rbenv rehash
