@@ -22,5 +22,4 @@
       - sqlite
       - tree
       - wget
-      - zsh
     state: present
