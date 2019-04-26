@@ -51,7 +51,7 @@ encrypt_secrets() {
 
 run_ansible_playbook() {
   echo "Running Ansible playbook with playbook.yml ..."
-  if ! ansible-playbook ansible/playbook.yml -vvv -i ansible/hosts --ask-vault-pass $ANSIBLE_OPTS; then
+  if ! ansible-playbook ansible/playbook.yml -i ansible/hosts --ask-vault-pass $ANSIBLE_OPTS; then
     echo "Error running Ansible playbook"
     exit 1
   fi

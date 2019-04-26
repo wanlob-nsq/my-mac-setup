@@ -4,7 +4,6 @@
 
 - name: Install mas apps
   command: mas install "{{ item.id }}"
-  register: app_store_install
   with_items:
     - { id: 1176895641, name: "Spark" }
     - { id: 1063631769, name: "Medis" }
@@ -18,5 +17,6 @@
     - { id: 539883307, name: 'LINE' }
     - { id: 425424353, name: 'The Unarchiver' }
     - { id: 1153157709 , name: 'Speedtest'}
+  register: app_store_install
 
 - debug: var=app_store_install.stdout_lines

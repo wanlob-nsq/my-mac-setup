@@ -3,7 +3,6 @@
     - cask
   ignore_errors: yes
   command: brew cask install "{{ item }}"
-  register: cask_install
   with_items:
     - 1password
     - bartender
@@ -36,5 +35,6 @@
     - visual-studio-code
     - vlc
     - wallpaper-wizard
+  register: cask_install
 
 - debug: var=cask_install.stdout_lines

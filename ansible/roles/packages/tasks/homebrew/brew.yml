@@ -2,7 +2,6 @@
   tags:
     - homebrew
   command: brew install "{{ item }}"
-  register: brew_install
   with_items:
     - ack
     - asciinema
@@ -23,5 +22,6 @@
     - sqlite
     - tree
     - wget
+  register: brew_install
 
 - debug: var=brew_install.stdout_lines
