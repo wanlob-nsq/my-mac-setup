@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-curl -L -o /tmp/laptop.zip https://github.com/narze/laptop/archive/master.zip
-unzip -j /tmp/laptop.zip -d ~/laptop
-sh ~/laptop/setup.sh
+curl -L -o /tmp/my-mac-setup.zip https://github.com/nijicha/my-mac-setup/archive/master.zip
+unzip -j /tmp/my-mac-setup.zip -d ~/my-mac-setup
+sh ~/my-mac-setup/setup.sh
