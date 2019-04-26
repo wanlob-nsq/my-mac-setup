@@ -1,6 +1,18 @@
 ---
 - name: Ensure MAS is installed.
   homebrew: name=mas state=present
+  register: "mas_check"
+
+- name: Fail If MAS Is Not Installed
+  fail:
+    msg: "MAS is missing...Install from Homebrew"
+  when: >
+        not mas_check.stat.exists
+
+- name: Installing MAS
+  command: brew install mas
+  when: >
+        not homebrew_check.stat.exists
 
 - name: Install mas apps
   command: mas install "{{ item.id }}"
