@@ -6,7 +6,6 @@
   with_items:
     - 1password
     - bartender
-    - caprine
     - chromedriver
     - cleanmymac
     - discord
@@ -20,7 +19,6 @@
     - hyper
     - istat-menus
     - jetbrains-toolbox
-    - kap
     - numi
     - paw
     - qlcolorcode
