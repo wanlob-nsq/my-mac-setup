@@ -1,0 +1,13 @@
+[color]
+        ui = true
+[user]
+        name = Nathakorn Chaninthanadecha
+        email = nathakorn.tonch@gmail.com
+[core]
+        autocrlf = input
+        excludesfile = ~/.gitignore_global
+        editor = vim
+[pager]
+        branch = cat
+[credential]
+        helper = osxkeychain
