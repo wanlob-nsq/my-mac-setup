@@ -1,4 +1,4 @@
-- name: Install Cask packages
+- name: Install Homebrew Cask packages
   tags:
     - cask
   ignore_errors: yes

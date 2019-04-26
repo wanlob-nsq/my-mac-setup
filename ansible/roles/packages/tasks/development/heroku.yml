@@ -9,3 +9,8 @@
     state: present
   tags:
     - heroku
+
+- name: Install heroku plugins
+  command: heroku plugins:install heroku-accounts
+  tags:
+    - heroku-plugins

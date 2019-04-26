@@ -1,4 +1,4 @@
-- name: Add tap
+- name: Add Homebrew tap
   homebrew_tap:
     name: buo/cask-upgrade
     state: present
