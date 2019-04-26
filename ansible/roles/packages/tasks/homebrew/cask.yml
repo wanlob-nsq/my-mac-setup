@@ -2,40 +2,39 @@
   tags:
     - cask
   ignore_errors: yes
-  homebrew_cask:
-    name:
-      - 1password
-      - bartender
-      - caprine
-      - chromedriver
-      - cleanmymac
-      - discord
-      - epubquicklook
-      - evernote
-      - flume
-      - folx
-      - google-backup-and-sync
-      - google-chrome
-      - google-drive-file-stream
-      - hyper
-      - istat-menus
-      - jetbrains-toolbox
-      - kap
-      - numi
-      - paw
-      - qlcolorcode
-      - qlmarkdown
-      - qlprettypatch
-      - qlstephen
-      - quicklook-csv
-      - quicklook-json
-      - sequel-pro
-      - sketch
-      - spotify
-      - visual-studio-code
-      - vlc
-      - wallpaper-wizard
-    state: present
-  register: brew_cask_install
+  command: brew cask install "{{ item }}"
+  register: cask_install
+  with_items:
+    - 1password
+    - bartender
+    - caprine
+    - chromedriver
+    - cleanmymac
+    - discord
+    - epubquicklook
+    - evernote
+    - flume
+    - folx
+    - google-backup-and-sync
+    - google-chrome
+    - google-drive-file-stream
+    - hyper
+    - istat-menus
+    - jetbrains-toolbox
+    - kap
+    - numi
+    - paw
+    - qlcolorcode
+    - qlmarkdown
+    - qlprettypatch
+    - qlstephen
+    - quicklook-csv
+    - quicklook-json
+    - sequel-pro
+    - sketch
+    - spotify
+    - visual-studio-code
+    - vlc
+    - wallpaper-wizard
 
-- debug: var=brew_cask_install.stdout_lines
+- debug: var=cask_install.stdout_lines

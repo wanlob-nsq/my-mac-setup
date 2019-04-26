@@ -1,26 +1,27 @@
 - name: Install Homebrew packages
   tags:
     - homebrew
-  homebrew:
-    name:
-      - ack
-      - asciinema
-      - asciiquarium
-      - cowsay
-      - curl
-      - figlet
-      - fortune
-      - git
-      - mas
-      - nginx
-      - nvm
-      - postgresql
-      - redis
-      - sl
-      - sqlite
-      - tree
-      - wget
-    state: present
+  command: brew install "{{ item }}"
   register: brew_install
+  with_items:
+    - ack
+    - asciinema
+    - asciiquarium
+    - cowsay
+    - curl
+    - figlet
+    - fortune
+    - git
+    - mas
+    - nginx
+    - nvm
+    - postgresql
+    - rbenv
+    - redis
+    - ruby-build
+    - sl
+    - sqlite
+    - tree
+    - wget
 
 - debug: var=brew_install.stdout_lines
