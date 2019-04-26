@@ -1,6 +1,6 @@
 - name: Link dotfiles
   file:
-    src: "{{ playbook_dir | dirname }}"
+    src: "{{ playbook_dir }}/misc"
     path: ~/.dotfiles
     state: link
     force: yes
@@ -12,82 +12,37 @@
     state: link
     force: yes
 
-- name: Link tmux.conf
+- name: Link vimrc
   file:
-    src: ~/.dotfiles/etc/tmux/.tmux.conf
-    path: ~/.tmux.conf
-    state: link
-    force: yes
-
-- name: Link tmux.conf.local
-  file:
-    src: ~/.dotfiles/etc/tmux/.tmux.conf.local
-    path: ~/.tmux.conf.local
-    state: link
-    force: yes
-
-- name: Link mackup.cfg
-  file:
-    src: ~/.dotfiles/etc/mackup.cfg
-    path: ~/.mackup.cfg
-    state: link
-    force: yes
-
-- name: Link asdfrc
-  file:
-    src: ~/.dotfiles/etc/asdfrc
-    path: ~/.asdfrc
+    src: ~/.dotfiles/vimrc
+    path: ~/.vimrc
     state: link
     force: yes
 
 - name: Link gitconfig
   file:
-    src: ~/.dotfiles/etc/gitconfig
+    src: ~/.dotfiles/git/gitconfig
     path: ~/.gitconfig
     state: link
     force: yes
 
 - name: Link gitignore_global
   file:
-    src: ~/.dotfiles/etc/gitignore_global
+    src: ~/.dotfiles/git/gitignore_global
     path: ~/.gitignore_global
     state: link
     force: yes
 
-- name: Link chunkwmrc
+- name: Link gemrc
   file:
-    src: ~/.dotfiles/etc/chunkwmrc
-    path: ~/.chunkwmrc
+    src: ~/.dotfiles/ruby/gemrc
+    path: ~/.gemrc
     state: link
     force: yes
 
-- name: Link chunkwm_rules
+- name: Link hyper.js
   file:
-    src: ~/.dotfiles/etc/chunkwm_rules
-    path: ~/.chunkwm_rules
-    state: link
-    force: yes
-
-- name: Link skhdrc
-  file:
-    src: ~/.dotfiles/etc/skhdrc
-    path: ~/.skhdrc
-    state: link
-    force: yes
-
-- name: Link pryrc
-  file:
-    src: ~/.dotfiles/etc/pryrc
-    path: ~/.pryrc
-    state: link
-    force: yes
-
-- name: Ensure .config directory
-  file: path=~/.config state=directory recurse=yes
-
-- name: Link karabiner.edn
-  file:
-    src: ~/.dotfiles/etc/karabiner.edn
-    path: ~/.config/karabiner.edn
+    src: ~/.dotfiles/hyper.js
+    path: ~/.hyper.js
     state: link
     force: yes

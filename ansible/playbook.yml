@@ -3,6 +3,6 @@
   connection: local
   roles:
     - packages
-#    - local
+    - local
   vars_files:
     - secrets.yml
