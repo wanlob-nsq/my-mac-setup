@@ -38,4 +38,4 @@
     state: present
   register: brew_cask_install
 
-- debug: var=brew_cask_install.stdouts_lines
+- debug: var=brew_cask_install.stdout_lines

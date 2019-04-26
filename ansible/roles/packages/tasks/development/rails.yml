@@ -8,4 +8,4 @@
     state: present
   register: rbenv_install
 
-- debug: var=rbenv_install.stdouts_lines
+- debug: var=rbenv_install.stdout_lines
