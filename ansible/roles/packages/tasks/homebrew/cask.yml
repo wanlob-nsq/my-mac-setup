@@ -36,3 +36,6 @@
       - vlc
       - wallpaper-wizard
     state: present
+  register: brew_cask_install
+
+- debug: var=brew_cask_install.stdouts_lines

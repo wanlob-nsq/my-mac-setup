@@ -1,0 +1,11 @@
+- name: Install Homebrew packages
+  tags:
+    - homebrew
+  homebrew:
+    name:
+      - rbenv
+      - ruby-build
+    state: present
+  register: rbenv_install
+
+- debug: var=rbenv_install.stdouts_lines

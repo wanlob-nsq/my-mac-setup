@@ -15,11 +15,12 @@
       - nginx
       - nvm
       - postgresql
-      - rbenv
       - redis
-      - ruby-build
       - sl
       - sqlite
       - tree
       - wget
     state: present
+  register: brew_install
+
+- debug: var=brew_install.stdouts_lines
