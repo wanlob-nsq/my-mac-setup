@@ -11,13 +11,13 @@
   user: name={{ansible_user_id}} shell=/usr/local/bin/zsh
 
 - name: Clone oh-my-zsh repo
-  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/$user/.oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh
 
 - name: Remove standard .zshrc
-  file: path=/home/$user/.zshrc state=absent
+  file: path=~/.zshrc state=absent
 
 - name: Deploy .zshrc
-  template: src=./misc/zsh/zshrc dest=/home/$user/.zshrc owner=$user
+  template: src=./misc/zsh/zshrc dest=~/.zshrc
 
 - name: Source .zshrc
   command: source
