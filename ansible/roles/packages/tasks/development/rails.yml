@@ -13,6 +13,9 @@
 - name: Global ruby 2.4.1
   command: rbenv global 2.4.1
 
+- name: rbenv Rehash
+  command: rbenv rehash
+
 - name: Install Rails 5.1.4
   command: gem install rails -v 5.1.4 --no-ri --no-doc
 
