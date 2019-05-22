@@ -17,10 +17,10 @@
   file: path=~/.zshrc state=absent
 
 - name: Deploy .zshrc
-  template: src=./misc/zsh/zshrc dest=~/.zshrc
+  template: src=../../../../../misc/zsh/zshrc dest=~/.zshrc
 
 - name: Source .zshrc
-  command: source
+  command: source ~/.zshrc
 
 #- name: Install zsh plugins => zsh-completions
 #  command: git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
