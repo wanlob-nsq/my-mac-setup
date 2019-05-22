@@ -2,15 +2,25 @@
   homebrew:
     name:
       - zsh
+      - zsh-completions
+      - zsh-syntax-highlighting
     state: present
 
 - name: Set default shell to installed zsh
   become: yes
   user: name={{ansible_user_id}} shell=/usr/local/bin/zsh
 
-#- name: Install oh-my-zsh
-#  command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#  become: yes
+- name: Clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/$user/.oh-my-zsh
+
+- name: Remove standard .zshrc
+  file: path=/home/$user/.zshrc state=absent
+
+- name: Deploy .zshrc
+  template: src=./misc/zsh/zshrc dest=/home/$user/.zshrc owner=$user
+
+- name: Source .zshrc
+  command: source
 
 #- name: Install zsh plugins => zsh-completions
 #  command: git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
