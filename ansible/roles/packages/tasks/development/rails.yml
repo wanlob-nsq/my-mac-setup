@@ -5,7 +5,7 @@
   homebrew: name=ruby-build state=present
 
 - name: Append rbenv to zshrc
-  command: echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+  command: echo -e 'if command -v rbenv 1>/dev/null 2>&1; then\n  eval "$(rbenv init -)"\nfi' >> ~/.zshrc
 
 - name: Install ruby 2.4.1
   command: rbenv install 2.4.1
