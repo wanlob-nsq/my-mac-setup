@@ -1,7 +1,6 @@
 - name: Install Homebrew Cask packages
   tags:
     - cask
-  ignore_errors: yes
   command: brew cask install "{{ item }}"
   with_items:
     - 1password
@@ -34,5 +33,6 @@
     - vlc
     - wallpaper-wizard
   register: cask_install
+  ignore_errors: yes
 
 - debug: var=cask_install.stdout_lines
