@@ -30,14 +30,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# ZSH Autocomplete
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
-# zsh-completions
-autoload -U compinit && compinit
-
 source $ZSH/oh-my-zsh.sh
 
 # Another Library
@@ -72,29 +64,4 @@ function color_table {
     echo;
     done
     echo
-}
-
-function backup_configuration {
-    echo 'Start backup my shell configuration...'
-    BACKUP_FOLDER='Documents/shell_backup'
-
-    echo 'Initialize / Used shell_backup folder'
-    mkdir -p ${BACKUP_FOLDER}
-
-    echo 'Backup .zshrc'
-    cp ~/.zshrc ~/${BACKUP_FOLDER}/zshrc
-
-    echo 'Backup .zsh_history'
-    cp ~/.zsh_history ~/${BACKUP_FOLDER}/zsh_history
-
-    echo 'Backup Hyper.js'
-    cp ~/.hyper.js ~/${BACKUP_FOLDER}/hyper.js
-
-    echo 'Backup brew list'
-    brew list > ~/${BACKUP_FOLDER}/brew-list.txt
-
-    echo 'Backup brew cask'
-    brew cask list > ~/${BACKUP_FOLDER}/brew-cask-list.txt
-
-    echo 'Done!'
 }
