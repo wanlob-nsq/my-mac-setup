@@ -8,10 +8,10 @@
     state: directory
 
 - name: Install node.js (Dubnium LTS) via nvm
-  shell: . ~/.nvm/nvm.sh && nvm install --lts='Dubnium'
+  shell: . $(brew list nvm | ack 'nvm.sh') && nvm install --lts='Dubnium'
 
 - name: Ensure nvm use installed node.js
-  command: nvm use default
+  shell: . $(brew list nvm | ack 'nvm.sh') && nvm use default
 
 - name: Install yarn
   homebrew:
@@ -22,8 +22,5 @@
   command: brew uninstall --ignore-dependencies node
 
 - name: link node to brew (Cellar)
-  file:
-    src: ~/.nvm/versions/node/
-    path: /usr/local/Cellar/
-    state: link
-    force: yes
+  command: ln -s ~/.nvm/versions/node/ /usr/local/Cellar/
+
