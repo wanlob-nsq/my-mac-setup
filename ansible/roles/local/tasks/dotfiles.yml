@@ -1,44 +1,47 @@
-- name: Link dotfiles
-  copy: src=misc dest=~/.dotfiles force=yes
+- name: Copy misc to .dotfiles
+  copy:
+    src: misc
+    dest: ~/.dotfiles
+    force: yes
 
 - name: Link zshrc
   file:
-    src: ~/.dotfiles/zsh/zshrc
+    src: ~/.dotfiles/misc/zsh/zshrc
     path: ~/.zshrc
     state: link
     force: yes
 
 - name: Link vimrc
   file:
-    src: ~/.dotfiles/vimrc
+    src: ~/.dotfiles/misc/vimrc
     path: ~/.vimrc
     state: link
     force: yes
 
 - name: Link gitconfig
   file:
-    src: ~/.dotfiles/git/gitconfig
+    src: ~/.dotfiles/misc/git/gitconfig
     path: ~/.gitconfig
     state: link
     force: yes
 
 - name: Link gitignore_global
   file:
-    src: ~/.dotfiles/git/gitignore_global
+    src: ~/.dotfiles/misc/git/gitignore_global
     path: ~/.gitignore_global
     state: link
     force: yes
 
 - name: Link gemrc
   file:
-    src: ~/.dotfiles/ruby/gemrc
+    src: ~/.dotfiles/misc/ruby/gemrc
     path: ~/.gemrc
     state: link
     force: yes
 
 - name: Link hyper.js
   file:
-    src: ~/.dotfiles/hyper.js
+    src: ~/.dotfiles/misc/hyper.js
     path: ~/.hyper.js
     state: link
     force: yes

@@ -9,17 +9,6 @@
 - name: clone oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh update=yes
 
-- name: check if .zshrc exists
-  stat: path=~/.zshrc
-  register: zshrc
-
-- name: back up existing .zshrc file if it exists
-  when: zshrc.stat.exists
-  copy: src=~/.zshrc dest=~/.zshrc-orig
-
-- name: copy zshrc to user home
-  copy: src=zshrc dest=~/.zshrc force=yes
-
 - name: Set default shell to installed zsh
   become: yes
   user: name={{ansible_user_id}} shell=/usr/local/bin/zsh
