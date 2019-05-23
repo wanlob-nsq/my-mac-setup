@@ -3,7 +3,7 @@
   homebrew: name=nvm state=present
 
 - name: Ensure nvm directory created.
-  commend: mkdir ~/.nvm
+  command: mkdir ~/.nvm
 
 - name: Install node.js (Dubnium LTS) via nvm
   command: nvm install --lts='Dubnium'
