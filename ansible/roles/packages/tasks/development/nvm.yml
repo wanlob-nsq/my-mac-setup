@@ -25,6 +25,7 @@
 - name: link node to brew (Cellar)
   file:
     src: ~/.nvm/versions/node/
-    dest: /usr/local/Cellar/
+    dest: /usr/local/Cellar/node
     state: link
     force: yes
+    ignore_errors: yes
