@@ -17,6 +17,3 @@
     - { id: 539883307, name: 'LINE' }
     - { id: 425424353, name: 'The Unarchiver' }
     - { id: 1153157709 , name: 'Speedtest'}
-  register: app_store_install
-
-- debug: var=app_store_install.stdout_lines

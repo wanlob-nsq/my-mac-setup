@@ -20,6 +20,3 @@
     - sqlite
     - tree
     - wget
-  register: brew_install
-
-- debug: var=brew_install.stdout_lines

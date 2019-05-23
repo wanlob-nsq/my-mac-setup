@@ -10,7 +10,6 @@
     - evernote
     - google-backup-and-sync
     - google-chrome
-    - google-drive-file-stream
     - hyper
     - jetbrains-toolbox
     - qlcolorcode
@@ -24,7 +23,10 @@
     - spotify
     - visual-studio-code
     - vlc
-  register: cask_install
   ignore_errors: yes
 
-- debug: var=cask_install.stdout_lines
+- name: Install Google File Stream (with Administrator)
+  tags:
+    - google-drive-file-stream
+  command: brew cask install google-drive-file-stream
+  become: true

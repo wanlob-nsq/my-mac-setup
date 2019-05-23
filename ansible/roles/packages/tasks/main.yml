@@ -6,7 +6,7 @@
 
 - import_tasks: development/heroku.yml
 #- import_tasks: development/nvm.yml
-- import_tasks: development/rails.yml
+#- import_tasks: development/rails.yml
 
 - import_tasks: apps/app_store.yml
   tags:
