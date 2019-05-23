@@ -6,7 +6,7 @@
 
 - name: Link zshrc
   file:
-    src: ~/.dotfiles/misc/zsh/zshrc
+    src: ~/.dotfiles/misc/zshrc
     path: ~/.zshrc
     state: link
     force: yes
