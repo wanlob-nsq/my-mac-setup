@@ -22,8 +22,8 @@
   command: brew uninstall --ignore-dependencies node
 
 - name: link node to brew (Cellar)
-    file:
-      path: /usr/local/Cellar/
-      src: ~/.nvm/versions/node/
-      state: link
-      force: yes
+  file:
+    path: /usr/local/Cellar/
+    src: ~/.nvm/versions/node/
+    state: link
+    force: yes
