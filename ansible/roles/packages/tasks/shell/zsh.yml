@@ -14,3 +14,8 @@
 - name: Set default shell to installed zsh
   become: yes
   user: name={{ansible_user_id}} shell=/usr/local/bin/zsh
+
+- name: source .zshrc
+  sudo: no
+  shell: source ~/.zshrc
+  args: executable=/usr/local/bin/zsh
