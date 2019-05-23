@@ -1,0 +1,4 @@
+- name: Install Google File Stream (need Administrator password)
+  tags:
+    - google-drive-file-stream
+  command: brew cask install google-drive-file-stream

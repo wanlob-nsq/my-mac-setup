@@ -24,9 +24,3 @@
     - visual-studio-code
     - vlc
   ignore_errors: yes
-
-- name: Install Google File Stream (with Administrator)
-  tags:
-    - google-drive-file-stream
-  command: brew cask install google-drive-file-stream
-  become: true
