@@ -11,7 +11,6 @@
     - fortune
     - git
     - nginx
-    - nvm
     - postgresql
     - rbenv
     - redis

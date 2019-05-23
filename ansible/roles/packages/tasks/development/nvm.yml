@@ -1,6 +1,27 @@
 ---
+- name: Ensure nvm installed.
+  homebrew: name=nvm state=present
+
+- name: Ensure nvm directory created.
+  commend: mkdir ~/.nvm
+
 - name: Install node.js (Dubnium LTS) via nvm
   command: nvm install --lts='Dubnium'
 
 - name: Ensure nvm use installed node.js
   command: nvm use default
+
+- name: Install yarn
+  homebrew:
+    name: yarn
+    state: present
+
+- name: Uninstall node dependencies
+  command: brew uninstall --ignore-dependencies node
+
+- name: link node to brew (Cellar)
+  file:
+    src: ~/.nvm/versions/node/
+    path: /usr/local/Cellar/
+    state: link
+    force: yes
