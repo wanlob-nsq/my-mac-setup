@@ -20,6 +20,7 @@
 
 - name: Uninstall node dependencies
   command: brew uninstall --ignore-dependencies node
+  ignore_errors: yes
 
 - name: link node to brew (Cellar)
   file:
