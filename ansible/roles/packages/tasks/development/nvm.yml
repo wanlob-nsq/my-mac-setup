@@ -8,7 +8,7 @@
     state: directory
 
 - name: Install node.js (Dubnium LTS) via nvm
-  command: nvm install --lts='Dubnium'
+  command: nvm install $(eval nvm version-remote --lts='Dubnium')
 
 - name: Ensure nvm use installed node.js
   command: nvm use default
