@@ -18,4 +18,5 @@
 - name: source .zshrc
   sudo: no
   shell: source ~/.zshrc
-  args: executable=/usr/local/bin/zsh
+  args:
+    executable: /usr/local/bin/zsh
