@@ -1,5 +1,5 @@
 - name: Link dotfiles
-  command: cp -r {{ playbook_dir }}/misc ~/.dotfiles
+  copy: src=misc dest=~/.dotfiles force=yes
 
 - name: Link zshrc
   file:
