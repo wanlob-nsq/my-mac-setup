@@ -15,7 +15,7 @@ plugins=(osx git zsh-completions zsh-syntax-highlighting aws rbenv ruby rails py
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-# Third party
+# Development
 
 # rbenv for ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -29,6 +29,14 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# ZSH Autocomplete
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
+# zsh-completions
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
