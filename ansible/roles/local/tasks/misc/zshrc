@@ -33,15 +33,10 @@ source $(brew --prefix nvm)/nvm.sh
 # Homebrew ZSH Autocomplete
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  FPATH=/usr/local/share/zsh-completions:$fpath
 fi
 
 # zsh-completions
 autoload -U compinit && compinit
-
-# zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
 

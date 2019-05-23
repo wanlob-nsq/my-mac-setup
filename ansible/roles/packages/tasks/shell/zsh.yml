@@ -1,13 +1,15 @@
 ---
 - name: install zsh and friends
-  package: name={{ item }}
-  with_items:
-    - zsh
-    - zsh-completions
-    - zsh-syntax-highlighting
+  package: name=zsh
 
 - name: clone oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh update=yes
+
+- name: clone zsh-completions
+  git: repo=https://github.com/zsh-users/zsh-completions dest=~/.oh-my-zsh/custom/plugins/zsh-completions update=yes
+
+- name: clone zsh-completions
+  git: repo=https://github.com/zsh-users/zsh-syntax-highlighting.git dest=~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting update=yes
 
 - name: Set default shell to installed zsh
   become: yes
