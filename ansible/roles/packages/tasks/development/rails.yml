@@ -6,6 +6,7 @@
 
 - name: Install ruby 2.4.1
   command: rbenv install 2.4.1
+  ignore_errors: yes
 
 - name: Global ruby 2.4.1
   command: rbenv global 2.4.1
