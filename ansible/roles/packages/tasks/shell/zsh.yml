@@ -16,7 +16,7 @@
   user: name={{ansible_user_id}} shell=/usr/local/bin/zsh
 
 - name: source .zshrc
-  sudo: no
+  become: no
   shell: source ~/.zshrc
   args:
     executable: /usr/local/bin/zsh

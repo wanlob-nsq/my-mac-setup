@@ -28,4 +28,3 @@
     dest: /usr/local/Cellar/node
     state: link
     force: yes
-    ignore_errors: yes
