@@ -4,7 +4,6 @@
 
 - import_tasks: shell/zsh.yml
 
-- import_tasks: development/pre_install.yml
 - import_tasks: development/heroku.yml
 - import_tasks: development/rails.yml
 - import_tasks: development/node.yml
