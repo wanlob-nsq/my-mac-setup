@@ -2,6 +2,3 @@
   tags:
     - google-drive-file-stream
   command: brew cask install google-drive-file-stream
-
-- name: Unconditionally reboot the machine with all defaults
-  reboot:
