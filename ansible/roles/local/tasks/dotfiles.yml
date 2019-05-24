@@ -4,6 +4,13 @@
     dest: ~/.dotfiles
     force: yes
 
+- name: Link bash_profile
+  file:
+    src: ~/.dotfiles/misc/bash_profile
+    path: ~/.bash_profile
+    state: link
+    force: yes
+
 - name: Link zshrc
   file:
     src: ~/.dotfiles/misc/zshrc

@@ -1,9 +1,4 @@
-- name: Ensure rbenv installed.
-  homebrew: name=rbenv state=present
-
-- name: Ensure ruby-build installed.
-  homebrew: name=ruby-build state=present
-
+---
 - name: Install ruby 2.4.1
   command: rbenv install 2.4.1
   ignore_errors: yes
