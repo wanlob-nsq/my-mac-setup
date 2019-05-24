@@ -10,12 +10,23 @@
 
 - name: Ensure rbenv installed.
   homebrew: name=rbenv state=present
+  register: rbenv_installed
 
 - name: Ensure ruby-build installed.
   homebrew: name=ruby-build state=present
 
-- name: source .bash_profile
-  become: no
-  shell: source ~/.bash_profile
+- name: Show rbenv_installed output
+  debug:
+    msg: '{{rbenv_installed}}'
+
+- name : source .zshrc
+  shell: source ~/.zshrc
   args:
-    executable: /bin/bash
+    executable: /usr/local/bin/zsh
+  register: sourced
+  when : rbenv_installed | success
+  become: no
+
+- name: Show sourced output
+  debug:
+    msg: '{{sourced}}'
