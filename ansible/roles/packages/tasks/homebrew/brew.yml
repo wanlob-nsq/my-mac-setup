@@ -12,9 +12,7 @@
     - git
     - nginx
     - postgresql
-    - rbenv
     - redis
-    - ruby-build
     - sl
     - sqlite
     - tree
