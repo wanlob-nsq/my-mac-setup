@@ -10,14 +10,8 @@
   command: rbenv install 2.4.1
   ignore_errors: yes
 
-- name: Global ruby 2.4.1
-  command: rbenv global 2.4.1
-
-- name: rbenv Rehash
-  command: rbenv rehash
-
-- name: Install Rails 5.1.4
-  command: gem install rails -v 5.1.4 --no-ri --no-doc
+- name: Install ruby 2.6.1
+  command: rbenv install 2.6.1
   ignore_errors: yes
 
 - name: rbenv Rehash
