@@ -4,6 +4,7 @@
   command: brew cask install "{{ item }}"
   with_items:
     - 1password
+    - caprine
     - chromedriver
     - discord
     - epubquicklook
@@ -12,6 +13,7 @@
     - google-chrome
     - hyper
     - jetbrains-toolbox
+    - kap
     - qlcolorcode
     - qlmarkdown
     - qlprettypatch
