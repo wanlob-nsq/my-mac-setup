@@ -15,21 +15,6 @@ plugins=(osx git zsh-completions zsh-syntax-highlighting aws rbenv ruby rails py
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-# Development
-
-# rbenv for ruby
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# pyenv for python
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# Config JAVA
-# export JAVA_HOME=$(/usr/libexec/java_home)
-
-# NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # Homebrew ZSH Autocomplete
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -38,7 +23,23 @@ fi
 # zsh-completions
 autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
+# Development
+
+# rbenv for ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# pyenv for python
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# ASDF
+. $(brew --prefix asdf)/asdf.sh
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+
+# NVM
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
+
+. $ZSH/oh-my-zsh.sh
 
 # Another Library
 
