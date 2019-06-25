@@ -1,76 +1,112 @@
-export ZSH=$HOME/.oh-my-zsh
+// See https://hyper.is#cfg for all currently supported options.
 
-# ZSH Base configuration
+module.exports = {
+  config: {
+    verminal: {
+      fontSize: 15
+    },
+    // hyperTransparentDynamic: {
+    //   alpha: 0.5 // default 50%
+    // },
+    hyperCustomTouchbar: [
+      // if you just need a single button then don't add options array
+      { label: 'clear', command: 'clear', backgroundColor: '#d13232' },
+      // { label: 'man', command: 'man ', prompt: true },
+      // {
+      //   label: 'git',
+      //   options: [
+      //     { label: 'diff', command: 'git diff' },
+      //     { label: 'status', command: 'git status' },
+      //     { label: 'log', command: 'git log' },
+      //     { label: 'add .', command: 'git add .', icon: '/tmp/icons8-add-file-44.png', iconPosition: 'right' },
+      //     { label: 'clone', command: 'git clone ', prompt: true },
+      //   ]
+      // },
+      // {
+      //   icon: '/tmp/icons8-folder-44.png',
+      //   options: [
+      //     { command: 'cd /usr/local/etc/nginx', icon: '/tmp/icons8-database-44.png', backgroundColor: '#000' },
+      //     { command: 'cd /usr/local/var/log', icon: '/tmp/icons8-binary-file-44.png', backgroundColor: '#000' },
+      //     { command: 'cd ~/Dropbox/', icon: '/tmp/icons8-dropbox-44.png', backgroundColor: '#000' },
+      //     { command: 'cd ~/Downloads/', icon: '/tmp/icons8-downloading-updates-44.png', backgroundColor: '#000' }
+      //   ]
+      // },
+      // {
+      //   label: 'vim',
+      //   options: [
+      //     { label: 'quit', command: ':q!', esc: true },
+      //     { label: 'save & quit', command: ':x', esc: true },
+      //   ]
+      // },
+    ],
+    confirmQuit: true,
+    updateChannel: 'stable', // 'stable' or 'canary'
+    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontWeight: 'normal',
+    fontSize: 15,
+    fontWeightBold: 'bold',
+    cursorColor: 'rgba(1, 112, 178, 0.5)',
+    cursorAccentColor: '#000',
+    cursorShape: 'BLOCK', // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
+    cursorBlink: true,
+    foregroundColor: '#96A8B5',
+    backgroundColor: '#000',
+    selectionColor: 'rgba(255,255,255,0.3)',
+    borderColor: '#13222E',
 
-ZSH_THEME="ys"
-HYPHEN_INSENSITIVE="true"
+    css: '',
+    termCSS: '',
+    showHamburgerMenu: '',
+    showWindowControls: '',
+    padding: '12px 14px',
 
-export LANG=en_US.UTF-8
+    colors: {
+      black: '#282629',
+      red: '#FF4050',
+      green: '#A4CC35',
+      yellow: '#FFD24A',
+      blue: '#66BFFF',
+      magenta: '#F553BF',
+      cyan: '#26C99E',
+      white: '#E0DCE0',
+      lightBlack: '#474247',
+      lightRed: '#F28144',
+      lightGreen: '#A4CC35',
+      lightYellow: '#FFD24A',
+      lightBlue: '#66BFFF',
+      lightMagenta: '#F553BF',
+      lightCyan: '#26C99E',
+      lightWhite: '#FFFCFF',
+    },
 
-# User configuration
-plugins=(osx git zsh-completions zsh-syntax-highlighting aws rbenv ruby rails pyenv python pip bundler gem brew node npm yarn web-search)
+    shell: '',
 
-# Library
+    // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
+    // by default `['--login']` will be used
+    shellArgs: ['--login'],
 
-# Homebrew
-export PATH="/usr/local/sbin:$PATH"
+    env: {},
 
-# Homebrew ZSH Autocomplete
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
+    bell: false,
+    copyOnSelect: false,
+    defaultSSHApp: true,
+  },
 
-# zsh-completions
-autoload -U compinit && compinit
+  plugins: [
+    'hyperterm-close-on-left',
+    'hyper-search',
+    "hyperlinks",
+    "hyper-confirm",
+    "hyper-savetext",
+    "hyper-custom-touchbar",
+    "verminal",
+    "hyperpower"
+  ],
 
-# Development
+  localPlugins: [],
 
-# rbenv for ruby
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# pyenv for python
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# ASDF
-. $(brew --prefix asdf)/asdf.sh
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-
-# NVM
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
-
-. $ZSH/oh-my-zsh.sh
-
-# Another Library
-
-# Python Lib
-# export PATH="/Users/nijicha/.local/bin:$PATH"
-
-# alias
-alias hyperconfig="code ~/.zshrc && code ~/.hyper.js"
-alias nginxconfig="code /usr/local/etc/nginx/nginx.conf"
-alias fix_maria_db="mkdir /usr/local/etc/my.cnf.d"
-
-RELAUNCH_FINDER="killall Finder /System/Library/CoreServices/Finder.app"
-alias show_dot_files="defaults write com.apple.finder AppleShowAllFiles YES; eval $RELAUNCH_FINDER"
-alias hide_dot_files="defaults write com.apple.finder AppleShowAllFiles NO; eval $RELAUNCH_FINDER"
-
-# Ref : https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/tools/screenshotTable.sh
-function color_table {
-    T='awesome'   # The test text
-
-    echo -e "\n                 40m     41m     42m     43m\
-        44m     45m     46m     47m";
-
-    for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
-            '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
-            '  36m' '1;36m' '  37m' '1;37m';
-    do FG=${FGs// /}
-    echo -en " $FGs \033[$FG  $T  "
-    for BG in 40m 41m 42m 43m 44m 45m 46m 47m;
-        do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
-    done
-    echo;
-    done
-    echo
-}
+  keymaps: {
+    // Example
+    // 'window:devtools': 'cmd+alt+o',
+  },
+};
