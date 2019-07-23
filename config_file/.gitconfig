@@ -1,0 +1,11 @@
+[diff]
+	tool = meld
+[meld]
+	tool = meld
+[core]
+	editor = "code --wait"
+[user]
+	name = Noom
+	email = wanlob@nsquared.asia
+[merge]
+	tool = meld
