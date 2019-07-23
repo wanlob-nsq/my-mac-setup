@@ -1,13 +1,11 @@
-[color]
-        ui = true
-[user]
-        name = Nathakorn Chaninthanadecha
-        email = nathakorn.tonch@gmail.com
+[diff]
+	tool = meld
+[meld]
+	tool = meld
 [core]
-        autocrlf = input
-        excludesfile = ~/.gitignore_global
-        editor = vim
-[pager]
-        branch = cat
-[credential]
-        helper = osxkeychain
+	editor = "code --wait"
+[user]
+	name = Noom
+	email = wanlob@nsquared.asia
+[merge]
+	tool = meld

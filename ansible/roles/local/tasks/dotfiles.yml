@@ -4,10 +4,10 @@
     dest: ~/.dotfiles
     force: yes
 
-- name: Link bash_profile
+- name: Link mybashrc
   file:
-    src: ~/.dotfiles/misc/bash_profile
-    path: ~/.bash_profile
+    src: ~/.dotfiles/misc/.mybashrc
+    path: ~/.mybashrc
     state: link
     force: yes
 
@@ -36,19 +36,5 @@
   file:
     src: ~/.dotfiles/misc/git/gitignore_global
     path: ~/.gitignore_global
-    state: link
-    force: yes
-
-- name: Link gemrc
-  file:
-    src: ~/.dotfiles/misc/ruby/gemrc
-    path: ~/.gemrc
-    state: link
-    force: yes
-
-- name: Link hyper.js
-  file:
-    src: ~/.dotfiles/misc/hyper.js
-    path: ~/.hyper.js
     state: link
     force: yes

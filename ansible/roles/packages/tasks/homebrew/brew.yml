@@ -5,15 +5,9 @@
   with_items:
     - ack
     - asciinema
-    - asciiquarium
     - curl
-    - figlet
-    - fortune
     - git
-    - nginx
     - postgresql
-    - redis
-    - sl
     - sqlite
     - tree
     - wget
